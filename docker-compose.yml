@@ -1,0 +1,15 @@
+version: '2'
+services:
+  bmlt:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.1.21
+    environment:
+      MYSQL_ROOT_PASSWORD: bmlt_root_password
+      MYSQL_DATABASE: bmlt
+      MYSQL_USER: bmlt_user
+      MYSQL_PASSWORD: bmlt_password

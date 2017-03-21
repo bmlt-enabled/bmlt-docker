@@ -1,11 +1,11 @@
-.PHONY: build run debug
-BMLT_VERSION=2.8.11
+.PHONY: run build push
+BMLT_VERSION=2.8.12
+
+run:
+	docker-compose up -d
 
 build:
 	docker build . -t radius314/bmlt:${BMLT_VERSION}
 
-run:
-	docker run -d -p 8080:80 radius314/bmlt:${BMLT_VERSION}
-
-debug:
-	docker run -it --entrypoint=/bin/bash -p 8080:80 radius314/bmlt:${BMLT_VERSION}
+push:
+	docker push radius314/bmlt:${BMLT_VERSION}

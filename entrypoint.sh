@@ -1,1 +1,0 @@
-service restart apache2

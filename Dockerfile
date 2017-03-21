@@ -5,12 +5,12 @@ RUN apt-get update \
 
 WORKDIR /opt
 
-ADD entrypoint.sh /opt
+ARG BMLT_VERSION=2.8.12
 
 RUN git clone https://bitbucket.org/bmlt/bmlt-root-server.git \
   && cd bmlt-root-server \
-  && git checkout -b 2.8.11 2.8.11 \
+  && git checkout -b ${BMLT_VERSION} ${BMLT_VERSION} \
   && mv ./* /var/www/html/ \
-  && cd /var/www/html
+  && chown -R www-data: /var/www/html
 
 CMD ["apachectl", "-D", "FOREGROUND"]
