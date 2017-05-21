@@ -1,5 +1,5 @@
 .PHONY: run build push
-BMLT_VERSION=2.8.12
+BMLT_VERSION=2.8.18
 
 run:
 	docker-compose up -d --build 

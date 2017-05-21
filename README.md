@@ -4,7 +4,9 @@ This is not intended to be run in production (however possible).  You most likel
 
 This makes it possible to quickly experiment with a BMLT root server without having to set up a server.
 
-### Getting started
+## Getting started
+
+### Building and testing the image
 
 Build the docker image:
 ```shell
