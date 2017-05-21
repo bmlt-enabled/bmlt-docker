@@ -5,7 +5,7 @@ RUN apt-get update \
 
 WORKDIR /opt
 
-ARG BMLT_VERSION=2.8.12
+ARG BMLT_VERSION=2.8.18
 
 RUN git clone https://bitbucket.org/bmlt/bmlt-root-server.git \
   && cd bmlt-root-server \
