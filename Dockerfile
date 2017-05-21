@@ -11,6 +11,11 @@ RUN git clone https://bitbucket.org/bmlt/bmlt-root-server.git \
   && cd bmlt-root-server \
   && git checkout -b ${BMLT_VERSION} ${BMLT_VERSION} \
   && mv ./* /var/www/html/ \
-  && chown -R www-data: /var/www/html
+  && chown -R www-data: /var/www/html \
+  && echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
+COPY conf/auto-config.inc.php /var/www/html
+
+RUN chmod 0644 /var/www/html/auto-config.inc.php
 
 CMD ["apachectl", "-D", "FOREGROUND"]
