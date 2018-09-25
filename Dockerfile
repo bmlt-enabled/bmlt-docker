@@ -5,7 +5,7 @@ RUN apt-get update \
 
 WORKDIR /opt
 
-ARG BMLT_VERSION=2.10.2
+ARG BMLT_VERSION=service-body-user-admin
 
 RUN git clone https://bitbucket.org/bmlt/bmlt-root-server.git \
   && cd bmlt-root-server \
